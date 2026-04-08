@@ -12,6 +12,39 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        function showme()
+        {
+            // alert("Hallo Selamat Siang");
+            Swal.fire({
+             title: "Hallo",
+             text: "Selamat Siang",
+             icon: "success"
+            });
+
+            console.log("Ini baris 19, sudah sampai disini");
+            a = 18 + 10;
+            console.log("Hasil Penjumlahan : " + a);
+            c = 1 * 2 * 3; 
+            console.log("Hasil Perkalian : " + c);
+        }
+
+        function changeText()
+        {
+            const element = document.getElementById("intro");
+            element.innerHTML = "Sistem Informasi ITS" ;
+        }
+
+        function changeStyle()
+        {
+            const element = document.getElementById("tombol");
+            element.style.color = "red" ;
+            element.style.background= "yellow";
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
    <style>
     /* BODY */
     body {
@@ -115,6 +148,7 @@
     /* ICON TITIK 3 */
     .link-menu {
       color: #999;
+      onclick="showme";
     }
 
     /* BUTTON JOIN */
@@ -153,7 +187,7 @@
     }
 
     /* RESPONSIVE MOBILE */
-    @media (max-width: 36px) {
+    @media (max-width: 36rem) {
       .container-main {
         padding: 0;
       }
@@ -188,18 +222,19 @@
       <!-- PROFILE -->
       <img class="profile-image" src="https://ugc.production.linktr.ee/EFeaDRVRT1ChzbfLBC2g_7BuxbR7xL9A4KMSM?io=true&size=avatar-v3_0">
       <div class="profile-name">@teazzi.id</div>
+      
 
       <!-- LIST LINK -->
       <div class="link-container">
 
-        <a href="https://booking.chope.co/booking_index?rid=teazziselect2509jkt&source=rest_linktree_teazziselect&adults=2&lang=en_US&country_code=JAKARTA" class="link-card">
+        <a id ="tombol" href="https://booking.chope.co/booking_index?rid=teazziselect2509jkt&source=rest_linktree_teazziselect&adults=2&lang=en_US&country_code=JAKARTA" class="link-card">
           <div class="link-text">
             TEAZZI EXPERIENCE (Central Park Mall)
           </div>
           <span class="link-menu">⋮</span>
         </a>
 
-        <a href="https://drive.google.com/file/d/1NXzm08xAxpdxM5n-T51TP_uXac9SKYPE/view" class="link-card">
+        <a id="intro" href="https://drive.google.com/file/d/1NXzm08xAxpdxM5n-T51TP_uXac9SKYPE/view" class="link-card">
           <div class="link-text">Menu Teazzi</div>
           <span class="link-menu">⋮</span>
         </a>
@@ -224,6 +259,10 @@
           Join teazzi.id on Linktree
         </a>
 
+        <button class="btn btn-primary" onclick="showme();">Show me</button>
+        <button class="btn btn-primary" onclick="changeText();">Change Text</button>
+        <button class="btn btn-primary" onclick="changeStyle();">Change Style</button>
+        
         <!-- FOOTER -->
         <div class="footer">
           <a href="#">Cookie Preferences</a> ·
